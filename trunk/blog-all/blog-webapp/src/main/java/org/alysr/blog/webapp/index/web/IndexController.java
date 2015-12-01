@@ -25,6 +25,7 @@ public class IndexController extends BaseController {
     @RequestMapping(value = "/index.do")
     public String getView(HttpServletRequest req, HttpServletResponse resp) {
 
+        logger.error("fuck me.");
         return PATH + "index.jsp";
     }
 }
