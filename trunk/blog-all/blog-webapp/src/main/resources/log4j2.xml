@@ -3,14 +3,15 @@
   <Properties>
     <Property name="appName">blog-webapp</Property>
     <Property name="filename">E:\logs\${appName}</Property>
-    <Property name="formatPattern">[${appName}][%d{yyyy-MM-dd HH:mm:ss.SSS}][%p][%c{1}][%t]%m%n</Property>
+    <Property name="jsonPattern">{ \"appName\" \: \"${appName}\", \"timestamp\" \: \"%d{yyyy-MM-dd HH:mm:ss.SSS}\" ,\"level\" \: \"%p\", \"class\" : \"%c\", \"thread\" : \"%t\", \"message\" : \"%m\" },%n</Property>
+    <Property name="consolePattern">[${appName}][%d{yyyy-MM-dd HH:mm:ss.SSS}][%p][%c{1}][%t]%m%n</Property>
   </Properties>
   <Appenders>
     <Console name="STDOUT" target="SYSTEM_OUT">
-      <PatternLayout pattern="${formatPattern}" />
+      <PatternLayout pattern="${consolePattern}" />
     </Console>
     <RollingFile name="RollingFile" fileName="${filename}.log" filePattern="${filename}-%d{yyyy-MM-dd}.%i.log">
-      <PatternLayout pattern="${formatPattern}" />
+      <PatternLayout pattern="${jsonPattern}" />
       <Policies>
         <TimeBasedTriggeringPolicy />
         <SizeBasedTriggeringPolicy size="10 MB" />

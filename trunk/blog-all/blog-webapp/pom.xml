@@ -9,6 +9,13 @@
   <packaging>war</packaging>
 
   <dependencies>
+    <!-- alysr -->
+    <dependency>
+      <groupId>org.alysr.framework</groupId>
+      <artifactId>framework-core</artifactId>
+      <version>1.0.0-BETA</version>
+    </dependency>
+
     <!-- spring -->
     <dependency>
       <groupId>org.springframework</groupId>
@@ -51,11 +58,27 @@
       <artifactId>log4j-core</artifactId>
     </dependency>
 
-    <!-- alysr -->
+    <!-- apache -->
     <dependency>
-      <groupId>org.alysr.framework</groupId>
-      <artifactId>framework-core</artifactId>
-      <version>1.0.0-BETA</version>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>commons-beanutils</groupId>
+      <artifactId>commons-beanutils</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-math3</artifactId>
+      <version>3.5</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.poi</groupId>
+      <artifactId>poi-ooxml</artifactId>
     </dependency>
   </dependencies>
 

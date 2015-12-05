@@ -16,7 +16,7 @@
   </listener>
 
   <servlet>
-    <servlet-name>SpringMVCDispatcherServlet</servlet-name>
+    <servlet-name>Spring MVC DispatcherServlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <init-param>
       <param-name>contextConfigLocation</param-name>
@@ -26,7 +26,7 @@
   </servlet>
 
   <servlet-mapping>
-    <servlet-name>SpringMVCDispatcherServlet</servlet-name>
+    <servlet-name>Spring MVC DispatcherServlet</servlet-name>
     <url-pattern>*.do</url-pattern>
     <url-pattern>*.action</url-pattern>
   </servlet-mapping>

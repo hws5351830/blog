@@ -3,10 +3,12 @@
  */
 package org.alysr.blog.webapp.index.web;
 
+import java.util.Map;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import org.alysr.framework.object.BaseController;
+import org.alysr.framework.core.object.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -20,12 +22,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping(value = "")
 public class IndexController extends BaseController {
 
-    private static final String PATH = "/index/";
+    private static final String JSP_PATH = "/index/";
 
     @RequestMapping(value = "/index.do")
     public String getView(HttpServletRequest req, HttpServletResponse resp) {
 
-        logger.error("fuck me.");
-        return PATH + "index.jsp";
+        Map<String, String[]> paramMap = req.getParameterMap();
+        for (String key : paramMap.keySet()) {
+            for (String str : paramMap.get(key)) {
+                logger.info(key + " : " + str);
+            }
+        }
+        return JSP_PATH + "index.jsp";
     }
 }
