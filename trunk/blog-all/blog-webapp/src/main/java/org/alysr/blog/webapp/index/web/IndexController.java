@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import org.alysr.framework.core.object.BaseController;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * <a href="mailto:alysrazorr@foxmail.com">alysrazorr@foxmail.com</a>
@@ -30,9 +31,22 @@ public class IndexController extends BaseController {
         Map<String, String[]> paramMap = req.getParameterMap();
         for (String key : paramMap.keySet()) {
             for (String str : paramMap.get(key)) {
-                logger.info(key + " : " + str);
+                logger.info(key + "=" + str);
             }
         }
         return JSP_PATH + "index.jsp";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = "/rest/test.do")
+    public Object testApi(HttpServletRequest req, HttpServletResponse resp) {
+
+        Map<String, String[]> paramMap = req.getParameterMap();
+        for (String key : paramMap.keySet()) {
+            for (String str : paramMap.get(key)) {
+                logger.info(key + "  =  " + str);
+            }
+        }
+        return "";
     }
 }
