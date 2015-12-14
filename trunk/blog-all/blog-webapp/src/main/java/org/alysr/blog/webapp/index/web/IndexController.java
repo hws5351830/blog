@@ -47,6 +47,8 @@ public class IndexController extends BaseController {
                 logger.info(key + "  =  " + str);
             }
         }
+
         return "";
     }
+
 }
