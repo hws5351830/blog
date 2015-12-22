@@ -24,12 +24,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @RequestMapping(value = "/user")
 public class UserController extends BaseController {
 
-    private static final String BASE_PATH = "/user/";
+    private static final String INDEX_PATH = "/user/";
 
     @RequestMapping(value = "/index.do")
     public String getView() {
 
-        return BASE_PATH + "index.jsp";
+        return INDEX_PATH + "index.jsp";
     }
 
     @ResponseBody
